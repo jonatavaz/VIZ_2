@@ -44,15 +44,16 @@ server = app.server  # Necessário para o Render
 # Layout com Tabs
 # -----------------------------
 
+df_lojas_vendas = df_vendas_total['Nome da Loja'].value_counts().reset_index()
+df_lojas_vendas.columns = ['Nome da Loja', 'Numero de Vendas']
+
 app.layout = html.Div([
     html.H1("Dashboard de Vendas", style={'textAlign': 'center'}),
     dcc.Tabs([
         dcc.Tab(label='Vendas por Loja', children=[
             dcc.Graph(
                 figure=px.bar(
-                    df_vendas_total['Nome da Loja'].value_counts().reset_index().rename(columns={
-                        'index': 'Nome da Loja', 'Nome da Loja': 'Numero de Vendas'
-                    }),
+                    df_lojas_vendas,
                     x='Nome da Loja',
                     y='Numero de Vendas',
                     title='Número de Vendas por Loja'

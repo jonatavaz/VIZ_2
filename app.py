@@ -50,8 +50,11 @@ app.layout = html.Div([
         dcc.Tab(label='Vendas por Loja', children=[
             dcc.Graph(
                 figure=px.bar(
-                    df_vendas_total['Nome da Loja'].value_counts().reset_index().rename(columns={'index': 'Nome da Loja', 'Nome da Loja': 'Numero de Vendas'}),
-                    x='Nome da Loja', y='Numero de Vendas',
+                    df_vendas_total['Nome da Loja'].value_counts().reset_index().rename(columns={
+                        'index': 'Nome da Loja', 'Nome da Loja': 'Numero de Vendas'
+                    }),
+                    x='Nome da Loja',
+                    y='Numero de Vendas',
                     title='Número de Vendas por Loja'
                 )
             )

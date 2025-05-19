@@ -37,7 +37,7 @@ df_vendas_total['Mes'] = df_vendas_total['Data da Venda'].dt.month
 # Inicialização do App
 # -----------------------------
 
-app = Dash(__name__)
+app = app.Dash(__name__)
 server = app.server  # Necessário para o Render
 
 # -----------------------------
@@ -186,5 +186,3 @@ def evolucao_tipo(tipo):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-server = app.server

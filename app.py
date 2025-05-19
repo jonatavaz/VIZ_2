@@ -186,3 +186,5 @@ def evolucao_tipo(tipo):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+server = app.server

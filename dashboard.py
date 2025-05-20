@@ -38,7 +38,7 @@ df_vendas_total['Mes'] = df_vendas_total['Data da Venda'].dt.month
 # Inicialização do App
 # -----------------------------
 
-app = Dash(__name__)
+app = dash.Dash(__name__)
 server = app.server  # Necessário para o Render
 
 # -----------------------------

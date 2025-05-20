@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
-from dash import Dash, dcc, html, Input, Output
+import dash
+from dash import dcc, html, Input, Output
 
 # -----------------------------
 # Carregamento e Tratamento
@@ -37,7 +38,7 @@ df_vendas_total['Mes'] = df_vendas_total['Data da Venda'].dt.month
 # Inicialização do App
 # -----------------------------
 
-app = Dash(__name__)
+app = dash.Dash(__name__)
 server = app.server  # Necessário para o Render
 
 # -----------------------------
